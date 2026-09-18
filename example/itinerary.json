@@ -1,0 +1,432 @@
+{
+  "days": [
+    {
+      "day_index": 0,
+      "date": "2026-10-01",
+      "weekday": "周四",
+      "region": "古城北 + 古城核心",
+      "attractions": [
+        {
+          "name": "鲁迅故里",
+          "type": "景区",
+          "duration_min": 120,
+          "ticket_price": 0,
+          "reservation_required": true,
+          "reservation_tips": "建议提前在官方公众号预约",
+          "region": "古城核心",
+          "score": 8.0,
+          "note": "国家5A级景区，含三味书屋、百草园；免费开放（需预约）",
+          "lng": 120.5855,
+          "lat": 30.002
+        },
+        {
+          "name": "书圣故里",
+          "type": "美食/古街",
+          "duration_min": 90,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 6.0,
+          "note": "王羲之故居所在历史街区，墨香氤氲，含题扇桥、戒珠寺",
+          "lng": 120.588,
+          "lat": 30.008
+        },
+        {
+          "name": "仓桥直街",
+          "type": "美食/古街",
+          "duration_min": 120,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 6.0,
+          "note": "2公里长的历史街区，青石木门马头墙，烟火气足；从鲁迅故里步行可达",
+          "lng": 120.5822,
+          "lat": 30.0048
+        },
+        {
+          "name": "沈园",
+          "type": "景区",
+          "duration_min": 60,
+          "ticket_price": 40,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城核心",
+          "score": 3.0,
+          "note": "宋代江南园林，陆游与唐琬爱情故事发生地；白园40元，夜场《沈园之夜》另计",
+          "lng": 120.5865,
+          "lat": 30.0008
+        }
+      ],
+      "meals": [
+        {
+          "type": "breakfast",
+          "name": "酒店早餐 / 本地早点（豆浆油条、次坞打面）",
+          "cost": 20
+        },
+        {
+          "type": "lunch",
+          "name": "迎恩门风情水街小吃",
+          "cost": 70
+        },
+        {
+          "type": "dinner",
+          "name": "府山横街本地菜",
+          "cost": 90
+        }
+      ],
+      "total_duration_min": 390
+    },
+    {
+      "day_index": 1,
+      "date": "2026-10-02",
+      "weekday": "周五",
+      "region": "古城北 + 城东 + 城南 + 黄酒小镇",
+      "attractions": [
+        {
+          "name": "八字桥",
+          "type": "美食/古街",
+          "duration_min": 40,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 6.0,
+          "note": "宋代古桥，'东半城'city walk线重要节点",
+          "lng": 120.592,
+          "lat": 30.0065
+        },
+        {
+          "name": "黄酒小镇",
+          "type": "美食/古街",
+          "duration_min": 90,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "黄酒小镇",
+          "score": 3.0,
+          "note": "绍兴黄酒发源地，地铁1号线支线可达；可体验黄酒文化",
+          "lng": 120.549,
+          "lat": 30.04
+        },
+        {
+          "name": "东湖",
+          "type": "景区",
+          "duration_min": 120,
+          "ticket_price": 50,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "城东",
+          "score": 3.0,
+          "note": "江南三大名湖之一，可坐乌篷船听船工唱越剧；石宕奇观",
+          "lng": 120.628,
+          "lat": 29.998
+        },
+        {
+          "name": "大禹陵",
+          "type": "景区",
+          "duration_min": 120,
+          "ticket_price": 60,
+          "reservation_required": true,
+          "reservation_tips": "建议提前在官方公众号预约",
+          "region": "城南",
+          "score": 2.5,
+          "note": "祭祀大禹的圣地，成人票60元；对全国大中小学生研学免费",
+          "lng": 120.598,
+          "lat": 29.982
+        }
+      ],
+      "meals": [
+        {
+          "type": "breakfast",
+          "name": "酒店早餐 / 本地早点（豆浆油条、次坞打面）",
+          "cost": 20
+        },
+        {
+          "type": "lunch",
+          "name": "迎恩门风情水街小吃",
+          "cost": 70
+        },
+        {
+          "type": "dinner",
+          "name": "府山横街本地菜",
+          "cost": 90
+        }
+      ],
+      "total_duration_min": 370
+    },
+    {
+      "day_index": 2,
+      "date": "2026-10-03",
+      "weekday": "周六",
+      "region": "兰亭片区 + 柯桥片区 + 鉴湖柯岩",
+      "attractions": [
+        {
+          "name": "安昌古镇",
+          "type": "美食/古街",
+          "duration_min": 180,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "柯桥片区",
+          "score": 6.0,
+          "note": "绍兴四大古镇之一，腊肠酱鸭挂满廊棚，师爷故里",
+          "lng": 120.483,
+          "lat": 30.078
+        },
+        {
+          "name": "柯岩风景区",
+          "type": "景区",
+          "duration_min": 180,
+          "ticket_price": 115,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "鉴湖柯岩",
+          "score": 5.5,
+          "note": "4A级，含柯岩、鉴湖、鲁镇三大片区",
+          "lng": 120.465,
+          "lat": 29.96
+        },
+        {
+          "name": "柯桥古镇",
+          "type": "美食/古街",
+          "duration_min": 120,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "柯桥片区",
+          "score": 3.0,
+          "note": "鉴湖之畔千年古镇，夜景佳",
+          "lng": 120.493,
+          "lat": 30.068
+        },
+        {
+          "name": "兰亭",
+          "type": "景区",
+          "duration_min": 120,
+          "ticket_price": 70,
+          "reservation_required": true,
+          "reservation_tips": "",
+          "region": "兰亭片区",
+          "score": 2.5,
+          "note": "王羲之《兰亭集序》诞生地，可写毛笔字、看鹅池、曲水流觞",
+          "lng": 120.52,
+          "lat": 29.943
+        }
+      ],
+      "meals": [
+        {
+          "type": "breakfast",
+          "name": "酒店早餐 / 本地早点（豆浆油条、次坞打面）",
+          "cost": 20
+        },
+        {
+          "type": "lunch",
+          "name": "兰亭景区周边农家乐",
+          "cost": 70
+        },
+        {
+          "type": "dinner",
+          "name": "安昌古镇酱鸭腊肠",
+          "cost": 90
+        }
+      ],
+      "total_duration_min": 600
+    },
+    {
+      "day_index": 3,
+      "date": "2026-10-04",
+      "weekday": "周日",
+      "region": "古城北",
+      "attractions": [
+        {
+          "name": "周恩来纪念馆",
+          "type": "博物馆/美术馆",
+          "duration_min": 60,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 3.0,
+          "note": "免费开放，爱国主义教育基地",
+          "lng": 120.584,
+          "lat": 30.009
+        },
+        {
+          "name": "蔡元培故居",
+          "type": "博物馆/美术馆",
+          "duration_min": 40,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 3.0,
+          "note": "免费开放，近代教育家蔡元培出生地",
+          "lng": 120.5872,
+          "lat": 30.0068
+        },
+        {
+          "name": "迎恩门风情水街",
+          "type": "city walk",
+          "duration_min": 90,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 3.0,
+          "note": "古城北门水街，夜景灯光佳，国庆氛围浓",
+          "lng": 120.572,
+          "lat": 30.012
+        },
+        {
+          "name": "秋瑾故居",
+          "type": "博物馆/美术馆",
+          "duration_min": 40,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城北",
+          "score": 3.0,
+          "note": "近代女革命家秋瑾故居",
+          "lng": 120.5852,
+          "lat": 30.0102
+        }
+      ],
+      "meals": [
+        {
+          "type": "breakfast",
+          "name": "酒店早餐 / 本地早点（豆浆油条、次坞打面）",
+          "cost": 20
+        },
+        {
+          "type": "lunch",
+          "name": "迎恩门风情水街小吃",
+          "cost": 70
+        },
+        {
+          "type": "dinner",
+          "name": "府山横街本地菜",
+          "cost": 90
+        }
+      ],
+      "total_duration_min": 230
+    },
+    {
+      "day_index": 4,
+      "date": "2026-10-05",
+      "weekday": "周一",
+      "region": "古城核心 + 古城西",
+      "attractions": [
+        {
+          "name": "府山公园",
+          "type": "景区",
+          "duration_min": 60,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城核心",
+          "score": 3.0,
+          "note": "藏半部绍兴史的城中公园，含越王台",
+          "lng": 120.578,
+          "lat": 30.0055
+        },
+        {
+          "name": "大善塔",
+          "type": "博物馆/美术馆",
+          "duration_min": 30,
+          "ticket_price": 0,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城核心",
+          "score": 3.0,
+          "note": "古城地标古塔",
+          "lng": 120.5838,
+          "lat": 30.0008
+        },
+        {
+          "name": "绍兴博物馆新馆",
+          "type": "博物馆/美术馆",
+          "duration_min": 90,
+          "ticket_price": 0,
+          "reservation_required": true,
+          "reservation_tips": "",
+          "region": "古城西",
+          "score": 2.5,
+          "note": "2026年2月9日开馆，总建筑面积超5万㎡，'墨韵稽山'馆藏书画展",
+          "lng": 120.5788,
+          "lat": 29.988
+        },
+        {
+          "name": "塔山",
+          "type": "景区",
+          "duration_min": 60,
+          "ticket_price": 5,
+          "reservation_required": false,
+          "reservation_tips": "",
+          "region": "古城核心",
+          "score": 0.0,
+          "note": "应天塔所在，登高可俯瞰古城",
+          "lng": 120.5845,
+          "lat": 29.9975
+        }
+      ],
+      "meals": [
+        {
+          "type": "breakfast",
+          "name": "酒店早餐 / 本地早点（豆浆油条、次坞打面）",
+          "cost": 20
+        },
+        {
+          "type": "lunch",
+          "name": "咸亨酒店（鲁迅故里）",
+          "cost": 70
+        },
+        {
+          "type": "dinner",
+          "name": "寻宝记绍兴菜",
+          "cost": 90
+        }
+      ],
+      "total_duration_min": 240
+    }
+  ],
+  "alternatives": [
+    "五泄风景区",
+    "青藤书屋",
+    "新昌大佛寺",
+    "穿岩",
+    "绍兴阳明故里",
+    "府山直街",
+    "中国黄酒博物馆",
+    "覆卮山",
+    "文笔塔",
+    "戒珠寺"
+  ],
+  "transport": [
+    "绍兴站",
+    "绍兴北站",
+    "绍兴地铁1号线",
+    "发站",
+    "第三站"
+  ],
+  "hotels": [],
+  "coord_sys": "GCJ-02",
+  "stats": {
+    "total_places": 59,
+    "scheduled": 20,
+    "alternatives": 25,
+    "merged_children": [
+      "三味书屋",
+      "上海虹桥",
+      "东湖景区",
+      "百草园",
+      "绍兴美术馆",
+      "蕺山",
+      "越王台",
+      "题扇桥",
+      "鲁迅故里步行街",
+      "鲁镇"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+# trip-plan 的第三方依赖清单
+#
+# 只有一个。全部 scripts/*.py 里，只有 md2html.py（Markdown → 单文件 HTML）
+# 需要它；其余脚本只用 Python 标准库，不需要虚拟环境、不需要任何 API Key。
+#
+# 不装也能用：pipeline.py 会检测到缺失并自动退回 report.py 的轻量转换器
+# （报告能出，但没有模块导航、细节不折叠、不含路线地图）。
+#
+# 安装：
+#   pip install -r requirements.txt
+#   python -m pip install -r requirements.txt     # 上面那条报「找不到 pip」时用
+#
+# 校验：
+#   python -c "import markdown; print(markdown.__version__)"
+
+markdown>=3.4

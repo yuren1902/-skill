@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>上海 → 绍兴 国庆行程规划报告</title>
+<style>
+:root{
+  --bg:#f4f8fc; --card:#ffffff; --ink:#1b2733; --ink2:#4a5a6a; --ink3:#8698a8;
+  --line:#dfe9f3; --accent:#3d8bfd; --accent-soft:#eaf3ff; --accent2:#5bb8d6;
+  --teal:#2f9e8f; --warn:#e8a33d; --shadow:0 1px 3px rgba(31,74,120,.07),
+  0 10px 28px rgba(31,74,120,.06); --radius:12px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Hiragino Sans GB",
+    "Microsoft YaHei","Source Han Sans SC",sans-serif;
+  font-size:15px; line-height:1.78; -webkit-font-smoothing:antialiased;
+}
+
+/* ---------- 页头 ---------- */
+.hero{
+  background:linear-gradient(135deg,#5ba7f7 0%,#3d8bfd 48%,#2f7ae0 100%);
+  color:#fff; padding:36px 26px 28px;
+}
+.hero-in{max-width:1080px; margin:0 auto}
+.hero h1{
+  font-size:27px; margin:0 0 8px; letter-spacing:-.3px; line-height:1.34;
+  border:0; padding:0; text-shadow:0 1px 3px rgba(20,60,120,.18);
+}
+.hero .sub{opacity:.94; font-size:14px; line-height:1.75; margin:0}
+.hero .sub b{color:#fff3c4; font-weight:600}
+
+/* ---------- 布局：桌面左栏(目录) + 右内容 ---------- */
+.layout{
+  max-width:1180px; margin:0 auto; padding:22px 18px 70px;
+  display:grid; grid-template-columns:238px minmax(0,1fr); gap:26px;
+  align-items:start;
+}
+/* ---------- 导航（桌面：左侧竖排侧栏） ---------- */
+.nav{
+  position:sticky; top:22px; z-index:50;
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  box-shadow:var(--shadow); padding:9px;
+  max-height:calc(100vh - 44px); overflow-y:auto;
+}
+.navtoggle{display:none}
+.nav-in{display:flex; flex-direction:column; gap:2px}
+.nav-in button{
+  display:flex; align-items:center; gap:9px; width:100%; text-align:left;
+  border:0; background:none; cursor:pointer;
+  font:inherit; font-size:13.5px; color:var(--ink2);
+  padding:10px 12px; border-radius:8px;
+  white-space:nowrap; transition:color .15s,background .15s;
+}
+.nav-in button:hover{color:var(--accent); background:var(--accent-soft)}
+.nav-in button.on{color:var(--accent); background:var(--accent-soft); font-weight:650}
+.nav-in button .ic{opacity:.85; margin:0; font-size:14px}
+
+/* ---------- 模块 ---------- */
+main{padding:0; min-width:0}
+.mod{display:none}
+.mod.on{display:block; animation:fade .22s ease}
+@keyframes fade{from{opacity:0; transform:translateY(6px)} to{opacity:1; transform:none}}
+.modhead{
+  display:flex; align-items:baseline; gap:10px; margin:6px 0 16px;
+  padding-bottom:12px; border-bottom:2px solid var(--accent);
+}
+.modhead h2{font-size:21px; margin:0; letter-spacing:-.2px; border:0; padding:0;
+  color:var(--ink)}
+.modhead .desc{color:var(--ink3); font-size:13px; margin-left:auto; text-align:right}
+
+.card{
+  background:var(--card); border:1px solid var(--line); border-radius:var(--radius);
+  padding:20px 22px 22px; box-shadow:var(--shadow); margin-bottom:16px;
+}
+
+h3{
+  font-size:17px; margin:26px 0 12px; color:var(--accent);
+  padding-bottom:7px; border-bottom:1px dashed var(--line);
+}
+h3:first-child{margin-top:0}
+h4{
+  font-size:15px; margin:20px 0 9px; padding-left:10px;
+  border-left:3px solid var(--accent2); font-weight:650;
+}
+blockquote{
+  margin:15px 0; padding:13px 17px; background:var(--accent-soft);
+  border-left:4px solid var(--accent); border-radius:0 8px 8px 0;
+  color:var(--ink2); font-size:14px;
+}
+blockquote p{margin:4px 0}
+p{margin:11px 0}
+strong{color:var(--ink); font-weight:650}
+a{color:#2f7ae0; text-decoration:none; border-bottom:1px solid rgba(61,139,253,.3)}
+ul,ol{padding-left:23px; margin:11px 0}
+li{margin:5px 0}
+hr{border:0; border-top:1px solid var(--line); margin:26px 0}
+code{
+  background:var(--accent-soft); padding:2px 6px; border-radius:4px;
+  font-size:13.5px; font-family:"SF Mono",Menlo,Consolas,monospace; color:#2f7ae0;
+}
+em{color:var(--ink3); font-style:normal; font-size:13.5px}
+
+/* ---------- 表格 ---------- */
+.tw{overflow-x:auto; margin:15px 0; border-radius:10px;
+  box-shadow:0 1px 3px rgba(31,74,120,.06); border:1px solid var(--line)}
+table{width:100%; border-collapse:collapse; font-size:13.8px; background:var(--card)}
+th{
+  background:var(--accent-soft); font-weight:650; text-align:left; font-size:13px;
+  padding:11px 13px; border-bottom:2px solid #d3e6fb; white-space:nowrap;
+  color:#2a6dc9;
+}
+td{padding:10px 13px; border-bottom:1px solid #eef4fa; vertical-align:top}
+tr:last-child td{border-bottom:0}
+tbody tr:nth-child(even){background:#fafcff}
+tbody tr:hover{background:#f2f8ff}
+
+/* ---------- 折叠 ---------- */
+details{
+  margin:14px 0; border:1px solid var(--line); border-radius:10px;
+  background:#fbfdff; overflow:hidden;
+}
+details>summary{
+  cursor:pointer; padding:12px 16px; font-weight:650; font-size:14px;
+  background:#eef5fd; list-style:none; user-select:none;
+  display:flex; align-items:center; gap:8px; color:#2a6dc9;
+}
+details>summary::-webkit-details-marker{display:none}
+details>summary::before{
+  content:"▸"; display:inline-block; transition:transform .18s ease;
+  color:var(--accent); font-size:13px; width:12px;
+}
+details[open]>summary::before{transform:rotate(90deg)}
+details[open]>summary{border-bottom:1px solid var(--line)}
+details>h4{
+  font-size:15px; margin:20px 16px 8px; padding-left:10px;
+  border-left:3px solid var(--accent2); font-weight:650;
+}
+details>h4:first-of-type{margin-top:16px}
+details>table{margin:8px 16px 16px; width:calc(100% - 32px); box-shadow:none;
+  border:1px solid var(--line)}
+details>p{margin:8px 16px; font-size:14px; color:var(--ink2)}
+details>ul{margin:6px 0; padding:8px 22px 14px 34px}
+details>ul li{margin:4px 0; font-size:14px}
+
+/* ---------- 内嵌地图 ---------- */
+.mapwrap{
+  border:1px solid var(--line); border-radius:12px; overflow:hidden;
+  box-shadow:var(--shadow); margin:16px 0;
+}
+.mapwrap .mapbar-top{
+  display:flex; align-items:center; gap:9px; padding:11px 15px;
+  background:var(--accent-soft); border-bottom:1px solid #d9e8fa;
+  font-size:13.5px; color:#2a6dc9; font-weight:650;
+}
+.mapwrap .mapfoot{
+  padding:10px 15px; background:#fbfdff; border-top:1px solid var(--line);
+  font-size:12px; color:var(--ink3); line-height:1.75;
+}
+
+@keyframes fade{}
+@media (max-width:900px){
+  .layout{grid-template-columns:206px minmax(0,1fr); gap:20px}
+}
+/* 手机/窄屏：左栏收起为顶部可折叠的「目录」条 */
+@media (max-width:820px){
+  .layout{display:block; padding:14px 12px 50px}
+  .nav{
+    position:sticky; top:0; margin:0 -12px 14px; padding:0;
+    border:0; border-radius:0; border-bottom:1px solid var(--line);
+    box-shadow:0 2px 10px rgba(31,74,120,.06);
+    background:rgba(255,255,255,.96); backdrop-filter:blur(10px);
+    max-height:none; overflow:visible;
+  }
+  .navtoggle{
+    display:flex; align-items:center; gap:9px; width:100%;
+    border:0; background:none; cursor:pointer; font:inherit;
+    font-size:14px; font-weight:650; color:var(--accent);
+    padding:13px 16px;
+  }
+  .navtoggle .cur{
+    color:var(--ink2); font-weight:400; margin-left:auto;
+    max-width:54%; overflow:hidden; text-overflow:ellipsis; white-space:nowrap;
+  }
+  .nav-in{
+    display:none; flex-direction:column; gap:0;
+    padding:6px 8px 10px; border-top:1px solid var(--line);
+    max-height:60vh; overflow-y:auto;
+  }
+  .nav.open .nav-in{display:flex}
+  .nav-in button{width:100%; padding:11px 13px; border-radius:8px}
+}
+@media (max-width:640px){
+  .hero{padding:24px 16px 20px} .hero h1{font-size:21px}
+  .card{padding:15px 15px 17px}
+  .modhead h2{font-size:18px} .modhead .desc{display:none}
+  table{font-size:12.6px} th,td{padding:8px 9px}
+  body{font-size:14.3px}
+}
+@media print{
+  .nav{display:none} .layout{display:block; max-width:none; padding:0}
+  .mod{display:block !important} .card{box-shadow:none}
+  body{background:#fff} .hero{background:#3d8bfd !important;
+    -webkit-print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<header class="hero"><div class="hero-in">
+  <h1>上海 → 绍兴 国庆行程规划报告</h1>
+  <p class="sub"><b>出发地</b>：上海　<b>目的地</b>：绍兴</p><p class="sub"><b>行程</b>：2026-10-01 起 5 天</p><p class="sub"><b>信源</b>：104 条原始结果 · A级权威 24 条 / C级待核 76 条 / D级噪声 4 条</p>
+</div></header>
+<div class="layout">
+<nav class="nav" id="navwrap">
+  <button class="navtoggle" id="navtoggle" aria-label="展开目录"><span>☰</span><span>目录</span><span class="cur" id="navcur"></span></button>
+  <div class="nav-in" id="nav"></div>
+</nav>
+<main id="main"></main>
+</div>
+<script>
+const MODULES = [{"name": "概览", "icon": "🧭", "desc": "目的地、天数、门票与预算，一屏看完", "body": "<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>维度<\/th>\n<th>内容<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td><strong>目的地<\/strong><\/td>\n<td>绍兴（越城区古城为核心）<\/td>\n<\/tr>\n<tr>\n<td><strong>行程天数<\/strong><\/td>\n<td>5 天<\/td>\n<\/tr>\n<tr>\n<td><strong>城际交通<\/strong><\/td>\n<td>上海 → 绍兴 高铁约 1 小时 4 分，二等座最低约 29.5 元起<\/td>\n<\/tr>\n<tr>\n<td><strong>景点门票<\/strong><\/td>\n<td>全程合计 <strong>0 元<\/strong>（19 个免费景点）<\/td>\n<\/tr>\n<tr>\n<td><strong>预算估算<\/strong><\/td>\n<td>约 <strong>0 元<\/strong> / 人<\/td>\n<\/tr>\n<tr>\n<td><strong>核心基调<\/strong><\/td>\n<td>古城人文 + 水乡 walk，景点高度集中、大量免费<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>"}, {"name": "详细行程", "icon": "📅", "desc": "逐日动线、餐饮建议与区内顺序", "body": "<h3>Day 1　2026-10-01（周四）<\/h3>\n<p><strong>区域<\/strong>：古城北 + 古城核心　|　<strong>游览总时长<\/strong>：约 6 小时 30 分<\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>顺序<\/th>\n<th>地点<\/th>\n<th>类型<\/th>\n<th>建议时长<\/th>\n<th>门票<\/th>\n<th>备注<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>1<\/td>\n<td><strong>鲁迅故里<\/strong> ⚠️需预约<\/td>\n<td>景区<\/td>\n<td>120 分<\/td>\n<td>免费<\/td>\n<td>国家5A级景区，含三味书屋、百草园；免费开放（需预约）<\/td>\n<\/tr>\n<tr>\n<td>2<\/td>\n<td><strong>书圣故里<\/strong><\/td>\n<td>美食/古街<\/td>\n<td>90 分<\/td>\n<td>免费<\/td>\n<td>王羲之故居所在历史街区，墨香氤氲，含题扇桥、戒珠寺<\/td>\n<\/tr>\n<tr>\n<td>3<\/td>\n<td><strong>仓桥直街<\/strong><\/td>\n<td>美食/古街<\/td>\n<td>120 分<\/td>\n<td>免费<\/td>\n<td>2公里长的历史街区，青石木门马头墙，烟火气足；从鲁迅故里步行可达<\/td>\n<\/tr>\n<tr>\n<td>4<\/td>\n<td><strong>沈园<\/strong><\/td>\n<td>景区<\/td>\n<td>60 分<\/td>\n<td>40 元<\/td>\n<td>宋代江南园林，陆游与唐琬爱情故事发生地；白园40元，夜场《沈园之夜》另计<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>餐饮建议<\/strong><\/p>\n<ul>\n<li>早餐：酒店早餐 / 本地早点（豆浆油条、次坞打面）（约 20 元）<\/li>\n<li>午餐：迎恩门风情水街小吃（约 70 元）<\/li>\n<li>晚餐：府山横街本地菜（约 90 元）<\/li>\n<\/ul>\n<blockquote>\n<p>💡 <strong>动线<\/strong>：鲁迅故里 → 书圣故里 → 仓桥直街 → 沈园（同区域集中，无需折返）<\/p>\n<\/blockquote>\n<hr />\n<h3>Day 2　2026-10-02（周五）<\/h3>\n<p><strong>区域<\/strong>：古城北 + 城东 + 城南 + 黄酒小镇　|　<strong>游览总时长<\/strong>：约 6 小时 10 分<\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>顺序<\/th>\n<th>地点<\/th>\n<th>类型<\/th>\n<th>建议时长<\/th>\n<th>门票<\/th>\n<th>备注<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>1<\/td>\n<td><strong>八字桥<\/strong><\/td>\n<td>美食/古街<\/td>\n<td>40 分<\/td>\n<td>免费<\/td>\n<td>宋代古桥，'东半城'city walk线重要节点<\/td>\n<\/tr>\n<tr>\n<td>2<\/td>\n<td><strong>黄酒小镇<\/strong><\/td>\n<td>美食/古街<\/td>\n<td>90 分<\/td>\n<td>免费<\/td>\n<td>绍兴黄酒发源地，地铁1号线支线可达；可体验黄酒文化<\/td>\n<\/tr>\n<tr>\n<td>3<\/td>\n<td><strong>东湖<\/strong><\/td>\n<td>景区<\/td>\n<td>120 分<\/td>\n<td>50 元<\/td>\n<td>江南三大名湖之一，可坐乌篷船听船工唱越剧；石宕奇观<\/td>\n<\/tr>\n<tr>\n<td>4<\/td>\n<td><strong>大禹陵<\/strong> ⚠️需预约<\/td>\n<td>景区<\/td>\n<td>120 分<\/td>\n<td>60 元<\/td>\n<td>祭祀大禹的圣地，成人票60元；对全国大中小学生研学免费<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>餐饮建议<\/strong><\/p>\n<ul>\n<li>早餐：酒店早餐 / 本地早点（豆浆油条、次坞打面）（约 20 元）<\/li>\n<li>午餐：迎恩门风情水街小吃（约 70 元）<\/li>\n<li>晚餐：府山横街本地菜（约 90 元）<\/li>\n<\/ul>\n<blockquote>\n<p>💡 <strong>动线<\/strong>：八字桥 → 黄酒小镇 → 东湖 → 大禹陵（同区域集中，无需折返）<\/p>\n<\/blockquote>\n<hr />\n<h3>Day 3　2026-10-03（周六）<\/h3>\n<p><strong>区域<\/strong>：兰亭片区 + 柯桥片区 + 鉴湖柯岩　|　<strong>游览总时长<\/strong>：约 10 小时 0 分<\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>顺序<\/th>\n<th>地点<\/th>\n<th>类型<\/th>\n<th>建议时长<\/th>\n<th>门票<\/th>\n<th>备注<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>1<\/td>\n<td><strong>安昌古镇<\/strong><\/td>\n<td>美食/古街<\/td>\n<td>180 分<\/td>\n<td>免费<\/td>\n<td>绍兴四大古镇之一，腊肠酱鸭挂满廊棚，师爷故里<\/td>\n<\/tr>\n<tr>\n<td>2<\/td>\n<td><strong>柯岩风景区<\/strong><\/td>\n<td>景区<\/td>\n<td>180 分<\/td>\n<td>115 元<\/td>\n<td>4A级，含柯岩、鉴湖、鲁镇三大片区<\/td>\n<\/tr>\n<tr>\n<td>3<\/td>\n<td><strong>柯桥古镇<\/strong><\/td>\n<td>美食/古街<\/td>\n<td>120 分<\/td>\n<td>免费<\/td>\n<td>鉴湖之畔千年古镇，夜景佳<\/td>\n<\/tr>\n<tr>\n<td>4<\/td>\n<td><strong>兰亭<\/strong> ⚠️需预约<\/td>\n<td>景区<\/td>\n<td>120 分<\/td>\n<td>70 元<\/td>\n<td>王羲之《兰亭集序》诞生地，可写毛笔字、看鹅池、曲水流觞<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>餐饮建议<\/strong><\/p>\n<ul>\n<li>早餐：酒店早餐 / 本地早点（豆浆油条、次坞打面）（约 20 元）<\/li>\n<li>午餐：兰亭景区周边农家乐（约 70 元）<\/li>\n<li>晚餐：安昌古镇酱鸭腊肠（约 90 元）<\/li>\n<\/ul>\n<blockquote>\n<p>💡 <strong>动线<\/strong>：安昌古镇 → 柯岩风景区 → 柯桥古镇 → 兰亭（同区域集中，无需折返）<\/p>\n<\/blockquote>\n<hr />\n<h3>Day 4　2026-10-04（周日）<\/h3>\n<p><strong>区域<\/strong>：古城北　|　<strong>游览总时长<\/strong>：约 3 小时 50 分<\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>顺序<\/th>\n<th>地点<\/th>\n<th>类型<\/th>\n<th>建议时长<\/th>\n<th>门票<\/th>\n<th>备注<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>1<\/td>\n<td><strong>周恩来纪念馆<\/strong><\/td>\n<td>博物馆/美术馆<\/td>\n<td>60 分<\/td>\n<td>免费<\/td>\n<td>免费开放，爱国主义教育基地<\/td>\n<\/tr>\n<tr>\n<td>2<\/td>\n<td><strong>蔡元培故居<\/strong><\/td>\n<td>博物馆/美术馆<\/td>\n<td>40 分<\/td>\n<td>免费<\/td>\n<td>免费开放，近代教育家蔡元培出生地<\/td>\n<\/tr>\n<tr>\n<td>3<\/td>\n<td><strong>迎恩门风情水街<\/strong><\/td>\n<td>city walk<\/td>\n<td>90 分<\/td>\n<td>免费<\/td>\n<td>古城北门水街，夜景灯光佳，国庆氛围浓<\/td>\n<\/tr>\n<tr>\n<td>4<\/td>\n<td><strong>秋瑾故居<\/strong><\/td>\n<td>博物馆/美术馆<\/td>\n<td>40 分<\/td>\n<td>免费<\/td>\n<td>近代女革命家秋瑾故居<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>餐饮建议<\/strong><\/p>\n<ul>\n<li>早餐：酒店早餐 / 本地早点（豆浆油条、次坞打面）（约 20 元）<\/li>\n<li>午餐：迎恩门风情水街小吃（约 70 元）<\/li>\n<li>晚餐：府山横街本地菜（约 90 元）<\/li>\n<\/ul>\n<blockquote>\n<p>💡 <strong>动线<\/strong>：周恩来纪念馆 → 蔡元培故居 → 迎恩门风情水街 → 秋瑾故居（同区域集中，无需折返）<\/p>\n<\/blockquote>\n<hr />\n<h3>Day 5　2026-10-05（周一）<\/h3>\n<p><strong>区域<\/strong>：古城核心 + 古城西　|　<strong>游览总时长<\/strong>：约 4 小时 0 分<\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>顺序<\/th>\n<th>地点<\/th>\n<th>类型<\/th>\n<th>建议时长<\/th>\n<th>门票<\/th>\n<th>备注<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>1<\/td>\n<td><strong>府山公园<\/strong><\/td>\n<td>景区<\/td>\n<td>60 分<\/td>\n<td>免费<\/td>\n<td>藏半部绍兴史的城中公园，含越王台<\/td>\n<\/tr>\n<tr>\n<td>2<\/td>\n<td><strong>大善塔<\/strong><\/td>\n<td>博物馆/美术馆<\/td>\n<td>30 分<\/td>\n<td>免费<\/td>\n<td>古城地标古塔<\/td>\n<\/tr>\n<tr>\n<td>3<\/td>\n<td><strong>绍兴博物馆新馆<\/strong> ⚠️需预约<\/td>\n<td>博物馆/美术馆<\/td>\n<td>90 分<\/td>\n<td>免费<\/td>\n<td>2026年2月9日开馆，总建筑面积超5万㎡，'墨韵稽山'馆藏书画展<\/td>\n<\/tr>\n<tr>\n<td>4<\/td>\n<td><strong>塔山<\/strong><\/td>\n<td>景区<\/td>\n<td>60 分<\/td>\n<td>5 元<\/td>\n<td>应天塔所在，登高可俯瞰古城<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>餐饮建议<\/strong><\/p>\n<ul>\n<li>早餐：酒店早餐 / 本地早点（豆浆油条、次坞打面）（约 20 元）<\/li>\n<li>午餐：咸亨酒店（鲁迅故里）（约 70 元）<\/li>\n<li>晚餐：寻宝记绍兴菜（约 90 元）<\/li>\n<\/ul>\n<blockquote>\n<p>💡 <strong>动线<\/strong>：府山公园 → 大善塔 → 绍兴博物馆新馆 → 塔山（同区域集中，无需折返）<\/p>\n<\/blockquote>\n<hr />"}, {"name": "城际交通", "icon": "🚄", "desc": "怎么去、在哪个站下车、市内怎么走", "body": "<p><strong>上海 → 绍兴<\/strong><\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>方式<\/th>\n<th>车次示例<\/th>\n<th>耗时<\/th>\n<th>参考票价<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>高铁（推荐）<\/td>\n<td>G7541 / G7363 / G7501 / D3131<\/td>\n<td>约 1 小时 4 分 ~ 1 小时 36 分<\/td>\n<td>最低约 29.5 元，常见 77–132 元<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>到达站选择<\/strong><\/p>\n<ul>\n<li><strong>绍兴站<\/strong> —— 出站即古城，步行可达鲁迅故里，<strong>首选<\/strong><\/li>\n<li><strong>绍兴北站<\/strong> —— 乘地铁 1 号线直达鲁迅故里站，约 40 分钟进古城<\/li>\n<\/ul>\n<p><strong>市内交通<\/strong><\/p>\n<ul>\n<li>地铁 1 号线：绍兴北站 ↔ 鲁迅故里站 ↔ 古城核心（票价约 4 元）<\/li>\n<li>古城内景点高度密集，<strong>步行 + 共享单车<\/strong> 最合适（鲁迅故里、沈园、仓桥直街步行可达）<\/li>\n<li>东湖、大禹陵、兰亭建议打车或公交接驳<\/li>\n<\/ul>"}, {"name": "预约与限流", "icon": "🎫", "desc": "门票、是否需要预约与优惠政策", "body": "<details><summary>展开：全部 51 个景点的门票与预约要求<\/summary>\n\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>景点<\/th>\n<th>门票<\/th>\n<th>预约要求<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>鲁迅故里<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>建议提前在官方公众号预约<\/td>\n<\/tr>\n<tr>\n<td>沈园<\/td>\n<td>40 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>三味书屋<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>百草园<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>仓桥直街<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>书圣故里<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>八字桥<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>府山公园<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>越王台<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>周恩来纪念馆<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>蔡元培故居<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>绍兴博物馆新馆<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>绍兴美术馆<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>东湖<\/td>\n<td>50 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>大禹陵<\/td>\n<td>60 元<\/td>\n<td>建议提前在官方公众号预约<\/td>\n<\/tr>\n<tr>\n<td>兰亭<\/td>\n<td>70 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>安昌古镇<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>柯岩风景区<\/td>\n<td>115 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>柯桥古镇<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>鲁镇<\/td>\n<td>100 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>黄酒小镇<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>迎恩门风情水街<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>塔山<\/td>\n<td>5 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>蕺山<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>大善塔<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>秋瑾故居<\/td>\n<td><strong>免费<\/strong><\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>青藤书屋<\/td>\n<td>5 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>五泄风景区<\/td>\n<td>80 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>新昌大佛寺<\/td>\n<td>100 元<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>府山直街<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>绍兴阳明故里<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>中国黄酒博物馆<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>覆卮山<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>文笔塔<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>戒珠寺<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>题扇桥<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>人故居<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>招宝山<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>城隍庙<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>东钱湖<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>岳王庙<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>艺术市立美术馆<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>鉴湖<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>穿岩<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>宛委山<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>陆游故居<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>绍兴羊山石佛寺<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>瓜渚湖<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>国清寺<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>雁蕩山<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<tr>\n<td>灵隐寺<\/td>\n<td>待确认<\/td>\n<td>—<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div><\/details><\/p>\n<blockquote>\n<p>⚠️ <strong>共 1 个景点需预约<\/strong>，建议出行前 3 天完成预约。<\/p>\n<\/blockquote>\n<p><strong>重要优惠政策<\/strong>（来自 A 级信源）<\/p>\n<ul>\n<li>鲁迅故里等 <strong>37 处景区向全球游客免费开放<\/strong><\/li>\n<li>大禹陵、沈园（不含夜沈园）、周恩来纪念馆、蔡元培故居、绍兴黄酒博物馆等 8 处国有景区，对全国大中小学生研学旅游免费<\/li>\n<li>大禹陵成人票约 60 元<\/li>\n<\/ul>"}, {"name": "备选地点", "icon": "🔀", "desc": "时间充裕或想换点时用", "body": "<ul>\n<li>五泄风景区<\/li>\n<li>青藤书屋<\/li>\n<li>新昌大佛寺<\/li>\n<li>穿岩<\/li>\n<li>绍兴阳明故里<\/li>\n<li>府山直街<\/li>\n<li>中国黄酒博物馆<\/li>\n<li>覆卮山<\/li>\n<li>文笔塔<\/li>\n<li>戒珠寺<\/li>\n<\/ul>\n<hr />"}, {"name": "费用", "icon": "💰", "desc": "逐项拆解，注意「每人」与「整团」的口径差异", "body": "<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>项目<\/th>\n<th>金额（<strong>每人<\/strong>，住宿除外）<\/th>\n<th>说明<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>门票<\/td>\n<td>0 元<\/td>\n<td>按行程内实际门票加总<\/td>\n<\/tr>\n<tr>\n<td>餐饮<\/td>\n<td>0 元<\/td>\n<td>早 20 + 午 70 + 晚 90 / 天<\/td>\n<\/tr>\n<tr>\n<td>住宿<\/td>\n<td>0 元<\/td>\n<td>0 晚 × 400 元<\/td>\n<\/tr>\n<tr>\n<td>城际交通<\/td>\n<td>0 元<\/td>\n<td>往返高铁二等座<\/td>\n<\/tr>\n<tr>\n<td>市内交通<\/td>\n<td>0 元<\/td>\n<td>地铁 + 打车<\/td>\n<\/tr>\n<tr>\n<td><strong>合计<\/strong><\/td>\n<td><strong>0 元<\/strong><\/td>\n<td><\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<blockquote>\n<p>💡 绍兴古城核心景点几乎全部免费，<strong>住宿与交通是主要开销<\/strong>。<\/p>\n<\/blockquote>"}, {"name": "路线地图", "icon": "🗺️", "desc": "每天一格，格内按远近再分簇，各格独立比例尺", "body": "<div class=\"svgwrap\"><svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 1140 1232\" width=\"1140\" height=\"1232\" preserveAspectRatio=\"xMidYMid meet\" role=\"img\" aria-label=\"路线示意图 · 每天一格\" style=\"display:block;width:100%;height:auto;max-width:100%;font-family:-apple-system,BlinkMacSystemFont,'PingFang SC','Microsoft YaHei',sans-serif\"><rect x=\"0\" y=\"0\" width=\"1140\" height=\"1232\" fill=\"#fbfdff\"/><defs><pattern id=\"grd2\" width=\"44\" height=\"44\" patternUnits=\"userSpaceOnUse\"><path d=\"M44 0H0V44\" fill=\"none\" stroke=\"#f0f5fa\" stroke-width=\"1\"/><\/pattern><\/defs><rect x=\"0\" y=\"0\" width=\"1140\" height=\"1232\" fill=\"url(#grd2)\"/><text x=\"22\" y=\"34\" font-size=\"16\" font-weight=\"700\" fill=\"#1b2733\">路线示意图 · 每天一格<\/text><text x=\"1118\" y=\"34\" text-anchor=\"end\" font-size=\"12.4\" fill=\"#6b7c8d\">全程车程合计 89 km · 118 分<\/text><rect x=\"22\" y=\"54\" width=\"540\" height=\"350\" rx=\"11\" fill=\"#ffffff\" stroke=\"#e6eef7\" stroke-width=\"1.2\"/><text x=\"36\" y=\"74\" font-size=\"12.8\" font-weight=\"700\" fill=\"#3d8bfd\">D0 · 10-01 周四<\/text><text x=\"548\" y=\"74\" text-anchor=\"end\" font-size=\"11.2\" fill=\"#98a9b8\">景间 2.7 km ＋ 接驳 0.0 km · 车程 3 分<\/text><line x1=\"303.3\" y1=\"303.0\" x2=\"373.6\" y2=\"108.0\" stroke=\"#3d8bfd\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"373.6\" y1=\"108.0\" x2=\"210.4\" y2=\"212.0\" stroke=\"#3d8bfd\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"210.4\" y1=\"212.0\" x2=\"331.4\" y2=\"342.0\" stroke=\"#3d8bfd\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><rect x=\"315.0\" y=\"197.8\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"338.4\" y=\"205.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#3d8bfd\" font-weight=\"650\">1km·1分<\/text><rect x=\"268.6\" y=\"152.3\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"292.0\" y=\"160.0\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#3d8bfd\" font-weight=\"650\">1km·1分<\/text><rect x=\"247.5\" y=\"269.3\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"270.9\" y=\"277.0\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#3d8bfd\" font-weight=\"650\">1km·1分<\/text><circle cx=\"303.3\" cy=\"303.0\" r=\"10.5\" fill=\"#3d8bfd\"/><text x=\"303.3\" y=\"303.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">1<\/text><circle cx=\"373.6\" cy=\"108.0\" r=\"10.5\" fill=\"#3d8bfd\"/><text x=\"373.6\" y=\"108.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">2<\/text><circle cx=\"210.4\" cy=\"212.0\" r=\"10.5\" fill=\"#3d8bfd\"/><text x=\"210.4\" y=\"212.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">3<\/text><circle cx=\"331.4\" cy=\"342.0\" r=\"10.5\" fill=\"#3d8bfd\"/><text x=\"331.4\" y=\"342.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">4<\/text><rect x=\"314.3\" y=\"250.6\" width=\"54.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"318.3\" y=\"267.0\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">鲁迅故里<\/text><rect x=\"384.6\" y=\"93.6\" width=\"54.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"388.6\" y=\"110.0\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">书圣故里<\/text><rect x=\"185.1\" y=\"172.6\" width=\"50.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"210.4\" y=\"189.0\" text-anchor=\"middle\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">仓桥直街<\/text><rect x=\"342.4\" y=\"289.6\" width=\"31.3\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"346.4\" y=\"306.0\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">沈园<\/text><line x1=\"146.0\" y1=\"379.0\" x2=\"438.0\" y2=\"379.0\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"146.0\" y1=\"375.5\" x2=\"146.0\" y2=\"382.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"438.0\" y1=\"375.5\" x2=\"438.0\" y2=\"382.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><text x=\"292.0\" y=\"371.5\" text-anchor=\"middle\" font-size=\"9.6\" fill=\"#b8c6d4\">1 km<\/text><rect x=\"578\" y=\"54\" width=\"540\" height=\"350\" rx=\"11\" fill=\"#ffffff\" stroke=\"#e6eef7\" stroke-width=\"1.2\"/><text x=\"592\" y=\"74\" font-size=\"12.8\" font-weight=\"700\" fill=\"#22b3a6\">D1 · 10-02 周五<\/text><text x=\"1104\" y=\"74\" text-anchor=\"end\" font-size=\"11.2\" fill=\"#98a9b8\">景间 24.1 km ＋ 接驳 0.0 km · 车程 32 分<\/text><line x1=\"860.2\" y1=\"243.2\" x2=\"710.0\" y2=\"108.0\" stroke=\"#22b3a6\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"710.0\" y1=\"108.0\" x2=\"986.0\" y2=\"277.4\" stroke=\"#22b3a6\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"986.0\" y1=\"277.4\" x2=\"881.2\" y2=\"342.0\" stroke=\"#22b3a6\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><rect x=\"758.6\" y=\"167.8\" width=\"53.1\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"785.1\" y=\"175.6\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#22b3a6\" font-weight=\"650\">8km·10分<\/text><rect x=\"818.3\" y=\"185.0\" width=\"59.4\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"848.0\" y=\"192.7\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#22b3a6\" font-weight=\"650\">12km·16分<\/text><rect x=\"910.2\" y=\"302.0\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"933.6\" y=\"309.7\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#22b3a6\" font-weight=\"650\">5km·6分<\/text><circle cx=\"860.2\" cy=\"243.2\" r=\"10.5\" fill=\"#22b3a6\"/><text x=\"860.2\" y=\"243.7\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">1<\/text><circle cx=\"710.0\" cy=\"108.0\" r=\"10.5\" fill=\"#22b3a6\"/><text x=\"710.0\" y=\"108.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">2<\/text><circle cx=\"986.0\" cy=\"277.4\" r=\"10.5\" fill=\"#22b3a6\"/><text x=\"986.0\" y=\"277.9\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">3<\/text><circle cx=\"881.2\" cy=\"342.0\" r=\"10.5\" fill=\"#22b3a6\"/><text x=\"881.2\" y=\"342.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">4<\/text><rect x=\"840.7\" y=\"203.8\" width=\"39.0\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"860.2\" y=\"220.2\" text-anchor=\"middle\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">八字桥<\/text><rect x=\"721.0\" y=\"93.6\" width=\"54.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"725.0\" y=\"110.0\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">黄酒小镇<\/text><rect x=\"972.3\" y=\"238.0\" width=\"27.3\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"986.0\" y=\"254.4\" text-anchor=\"middle\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">东湖<\/text><rect x=\"861.7\" y=\"302.6\" width=\"39.0\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"881.2\" y=\"319.0\" text-anchor=\"middle\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">大禹陵<\/text><line x1=\"757.4\" y1=\"379.0\" x2=\"938.6\" y2=\"379.0\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"757.4\" y1=\"375.5\" x2=\"757.4\" y2=\"382.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"938.6\" y1=\"375.5\" x2=\"938.6\" y2=\"382.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><text x=\"848.0\" y=\"371.5\" text-anchor=\"middle\" font-size=\"9.6\" fill=\"#b8c6d4\">5 km<\/text><rect x=\"22\" y=\"420\" width=\"540\" height=\"350\" rx=\"11\" fill=\"#ffffff\" stroke=\"#e6eef7\" stroke-width=\"1.2\"/><text x=\"36\" y=\"440\" font-size=\"12.8\" font-weight=\"700\" fill=\"#f2a93b\">D2 · 10-03 周六<\/text><text x=\"548\" y=\"440\" text-anchor=\"end\" font-size=\"11.2\" fill=\"#98a9b8\">景间 53.6 km ＋ 接驳 0.0 km · 车程 71 分<\/text><line x1=\"277.7\" y1=\"474.0\" x2=\"250.7\" y2=\"678.5\" stroke=\"#f2a93b\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"250.7\" y1=\"678.5\" x2=\"292.8\" y2=\"491.3\" stroke=\"#f2a93b\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"292.8\" y1=\"491.3\" x2=\"333.3\" y2=\"708.0\" stroke=\"#f2a93b\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><rect x=\"234.5\" y=\"568.5\" width=\"59.4\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"264.2\" y=\"576.3\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#f2a93b\" font-weight=\"650\">18km·24分<\/text><rect x=\"242.0\" y=\"599.2\" width=\"59.4\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"271.7\" y=\"606.9\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#f2a93b\" font-weight=\"650\">17km·22分<\/text><rect x=\"304.9\" y=\"587.9\" width=\"59.4\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"334.6\" y=\"595.6\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#f2a93b\" font-weight=\"650\">19km·25分<\/text><circle cx=\"277.7\" cy=\"474.0\" r=\"7.6\" fill=\"#f2a93b\"/><text x=\"277.7\" y=\"474.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"9.2\" fill=\"#fff\" font-weight=\"700\">1<\/text><circle cx=\"250.7\" cy=\"678.5\" r=\"7.6\" fill=\"#f2a93b\"/><text x=\"250.7\" y=\"679.0\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"9.2\" fill=\"#fff\" font-weight=\"700\">2<\/text><circle cx=\"292.8\" cy=\"491.3\" r=\"7.6\" fill=\"#f2a93b\"/><text x=\"292.8\" y=\"491.8\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"9.2\" fill=\"#fff\" font-weight=\"700\">3<\/text><circle cx=\"333.3\" cy=\"708.0\" r=\"7.6\" fill=\"#f2a93b\"/><text x=\"333.3\" y=\"708.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"9.2\" fill=\"#fff\" font-weight=\"700\">4<\/text><rect x=\"288.7\" y=\"460.6\" width=\"50.9\" height=\"20.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"292.7\" y=\"476.0\" text-anchor=\"start\" font-size=\"11.4\" fill=\"#26333f\" font-weight=\"650\">安昌古镇<\/text><rect x=\"221.9\" y=\"640.1\" width=\"57.6\" height=\"20.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"250.7\" y=\"655.5\" text-anchor=\"middle\" font-size=\"11.4\" fill=\"#26333f\" font-weight=\"650\">柯岩风景区<\/text><rect x=\"269.3\" y=\"506.9\" width=\"46.9\" height=\"20.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"292.8\" y=\"522.3\" text-anchor=\"middle\" font-size=\"11.4\" fill=\"#26333f\" font-weight=\"650\">柯桥古镇<\/text><rect x=\"320.6\" y=\"669.6\" width=\"25.4\" height=\"20.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"333.3\" y=\"685.0\" text-anchor=\"middle\" font-size=\"11.4\" fill=\"#26333f\" font-weight=\"650\">兰亭<\/text><line x1=\"214.1\" y1=\"745.0\" x2=\"369.9\" y2=\"745.0\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"214.1\" y1=\"741.5\" x2=\"214.1\" y2=\"748.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"369.9\" y1=\"741.5\" x2=\"369.9\" y2=\"748.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><text x=\"292.0\" y=\"737.5\" text-anchor=\"middle\" font-size=\"9.6\" fill=\"#b8c6d4\">10 km<\/text><rect x=\"578\" y=\"420\" width=\"540\" height=\"350\" rx=\"11\" fill=\"#ffffff\" stroke=\"#e6eef7\" stroke-width=\"1.2\"/><text x=\"592\" y=\"440\" font-size=\"12.8\" font-weight=\"700\" fill=\"#7c5cf0\">D3 · 10-04 周日<\/text><text x=\"1104\" y=\"440\" text-anchor=\"end\" font-size=\"11.2\" fill=\"#98a9b8\">景间 4.3 km ＋ 接驳 0.0 km · 车程 6 分<\/text><line x1=\"973.1\" y1=\"604.1\" x2=\"1064.0\" y2=\"676.3\" stroke=\"#7c5cf0\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"1064.0\" y1=\"676.3\" x2=\"632.0\" y2=\"505.7\" stroke=\"#7c5cf0\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"632.0\" y1=\"505.7\" x2=\"1007.2\" y2=\"564.7\" stroke=\"#7c5cf0\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><rect x=\"995.1\" y=\"632.5\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"1018.5\" y=\"640.2\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#7c5cf0\" font-weight=\"650\">0km·1分<\/text><rect x=\"824.6\" y=\"583.2\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"848.0\" y=\"591.0\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#7c5cf0\" font-weight=\"650\">2km·3分<\/text><rect x=\"796.2\" y=\"527.5\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"819.6\" y=\"535.2\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#7c5cf0\" font-weight=\"650\">2km·2分<\/text><circle cx=\"973.1\" cy=\"604.1\" r=\"10.5\" fill=\"#7c5cf0\"/><text x=\"973.1\" y=\"604.6\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">1<\/text><circle cx=\"1064.0\" cy=\"676.3\" r=\"10.5\" fill=\"#7c5cf0\"/><text x=\"1064.0\" y=\"676.8\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">2<\/text><circle cx=\"632.0\" cy=\"505.7\" r=\"10.5\" fill=\"#7c5cf0\"/><text x=\"632.0\" y=\"506.2\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">3<\/text><circle cx=\"1007.2\" cy=\"564.7\" r=\"10.5\" fill=\"#7c5cf0\"/><text x=\"1007.2\" y=\"565.2\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">4<\/text><rect x=\"884.1\" y=\"551.7\" width=\"77.9\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"958.1\" y=\"568.1\" text-anchor=\"end\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">周恩来纪念馆<\/text><rect x=\"1075.0\" y=\"661.9\" width=\"66.3\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"1079.0\" y=\"678.3\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">蔡元培故居<\/text><rect x=\"643.0\" y=\"491.3\" width=\"89.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"647.0\" y=\"507.7\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">迎恩门风情水街<\/text><rect x=\"981.8\" y=\"525.3\" width=\"50.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"1007.2\" y=\"541.7\" text-anchor=\"middle\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">秋瑾故居<\/text><line x1=\"700.6\" y1=\"745.0\" x2=\"995.4\" y2=\"745.0\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"700.6\" y1=\"741.5\" x2=\"700.6\" y2=\"748.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"995.4\" y1=\"741.5\" x2=\"995.4\" y2=\"748.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><text x=\"848.0\" y=\"737.5\" text-anchor=\"middle\" font-size=\"9.6\" fill=\"#b8c6d4\">1 km<\/text><rect x=\"22\" y=\"786\" width=\"540\" height=\"350\" rx=\"11\" fill=\"#ffffff\" stroke=\"#e6eef7\" stroke-width=\"1.2\"/><text x=\"36\" y=\"806\" font-size=\"12.8\" font-weight=\"700\" fill=\"#4dc4e8\">D4 · 10-05 周一<\/text><text x=\"548\" y=\"806\" text-anchor=\"end\" font-size=\"11.2\" fill=\"#98a9b8\">景间 4.6 km ＋ 接驳 0.0 km · 车程 6 分<\/text><line x1=\"254.4\" y1=\"840.0\" x2=\"321.5\" y2=\"902.8\" stroke=\"#4dc4e8\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"321.5\" y1=\"902.8\" x2=\"263.6\" y2=\"1074.0\" stroke=\"#4dc4e8\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><line x1=\"263.6\" y1=\"1074.0\" x2=\"329.6\" y2=\"947.0\" stroke=\"#4dc4e8\" stroke-width=\"3.2\" stroke-linecap=\"round\"/><rect x=\"264.5\" y=\"863.7\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"287.9\" y=\"871.4\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#4dc4e8\" font-weight=\"650\">1km·1分<\/text><rect x=\"269.2\" y=\"980.7\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"292.6\" y=\"988.4\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#4dc4e8\" font-weight=\"650\">2km·3分<\/text><rect x=\"273.2\" y=\"1002.7\" width=\"46.8\" height=\"15.5\" rx=\"7\" fill=\"#ffffff\" fill-opacity=\".94\" stroke=\"#e3ebf3\"/><text x=\"296.6\" y=\"1010.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"10.4\" fill=\"#4dc4e8\" font-weight=\"650\">2km·2分<\/text><circle cx=\"254.4\" cy=\"840.0\" r=\"10.5\" fill=\"#4dc4e8\"/><text x=\"254.4\" y=\"840.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">1<\/text><circle cx=\"321.5\" cy=\"902.8\" r=\"10.5\" fill=\"#4dc4e8\"/><text x=\"321.5\" y=\"903.3\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">2<\/text><circle cx=\"263.6\" cy=\"1074.0\" r=\"10.5\" fill=\"#4dc4e8\"/><text x=\"263.6\" y=\"1074.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">3<\/text><circle cx=\"329.6\" cy=\"947.0\" r=\"10.5\" fill=\"#4dc4e8\"/><text x=\"329.6\" y=\"947.5\" text-anchor=\"middle\" dominant-baseline=\"central\" font-size=\"11.0\" fill=\"#fff\" font-weight=\"700\">4<\/text><rect x=\"265.4\" y=\"825.6\" width=\"54.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"269.4\" y=\"842.0\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">府山公园<\/text><rect x=\"332.5\" y=\"850.4\" width=\"43.0\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"336.5\" y=\"866.8\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">大善塔<\/text><rect x=\"220.8\" y=\"1034.6\" width=\"85.6\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"263.6\" y=\"1051.0\" text-anchor=\"middle\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">绍兴博物馆新馆<\/text><rect x=\"340.6\" y=\"894.6\" width=\"31.3\" height=\"21.4\" rx=\"5\" fill=\"#ffffff\" fill-opacity=\".88\"/><text x=\"344.6\" y=\"911.0\" text-anchor=\"start\" font-size=\"12.4\" fill=\"#26333f\" font-weight=\"650\">塔山<\/text><line x1=\"231.9\" y1=\"1111.0\" x2=\"352.1\" y2=\"1111.0\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"231.9\" y1=\"1107.5\" x2=\"231.9\" y2=\"1114.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><line x1=\"352.1\" y1=\"1107.5\" x2=\"352.1\" y2=\"1114.5\" stroke=\"#b8c6d4\" stroke-width=\"1.7\"/><text x=\"292.0\" y=\"1103.5\" text-anchor=\"middle\" font-size=\"9.6\" fill=\"#b8c6d4\">1 km<\/text><text x=\"22\" y=\"1158\" font-size=\"12.4\" font-weight=\"700\" fill=\"#1b2733\">跨天转移<\/text><text x=\"110\" y=\"1158\" font-size=\"11.6\" fill=\"#98a9b8\">（本行程无 40 km 以上的跨天转移）<\/text><text x=\"22\" y=\"1183\" font-size=\"11.4\" fill=\"#8698a8\">每格/每子格比例尺不同，见各自底部居中；虚线为车站接驳段；连线为点对点直线，不表示道路几何；实际里程与车程以导航为准。<\/text><\/svg><div class=\"svg-note\"><b>怎么看这张图<\/b>：一天一格；格内若出现两个距离很远的片区，会<b>再拆成子格<\/b>，各自带比例尺（每格底部居中）—— 这样城区里几个相邻景点才不会被上百公里的长途压成一个点。格内连线是点对点直线，不表示道路几何；距离与车程为估算值（绕行系数 1.35、均速 45 km/h），<b>实际以导航为准<\/b>。<span class=\"dim\">跨片区、跨天的长途只以文字列出，不占版面。<\/span><\/div><style>.svgwrap{border:1px solid #dfe9f3;border-radius:12px;overflow:hidden;background:#fbfdff;margin:4px 0 10px}.svg-note{padding:10px 14px;font-size:12px;line-height:1.75;color:#6b7c8d;background:#f7fafd;border-top:1px solid #eef3f8}.svg-note .dim{color:#a8b6c4}<\/style><\/div>"}, {"name": "行前与风险", "icon": "⚠️", "desc": "风险清单与出行前必做", "body": "<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>风险项<\/th>\n<th>说明<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>⚠️ 国庆客流<\/td>\n<td>鲁迅故里、沈园等核心景点国庆期间人流极大，建议 <strong>早上 8 点前<\/strong> 抵达<\/td>\n<\/tr>\n<tr>\n<td>⚠️ 活动未确证<\/td>\n<td>本次检索 <strong>未能获取到绍兴国庆期间的确定性活动排期<\/strong><\/td>\n<\/tr>\n<tr>\n<td>⚠️ 预约制度<\/td>\n<td>部分景点需提前预约，旺季可能限流<\/td>\n<\/tr>\n<tr>\n<td>⚠️ 信源时效<\/td>\n<td>部分优质攻略发布于数年前，价格与开放时间需现场核对<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<p><strong>出行前必做<\/strong><\/p>\n<ol>\n<li>查绍兴文旅官方公众号，确认国庆活动排期<\/li>\n<li>高铁票开售即抢（国庆为全年最高峰）<\/li>\n<li>需要预约的景点提前 3 天完成预约<\/li>\n<\/ol>"}, {"name": "信源与核查", "icon": "🔍", "desc": "本次检索的分级结果与可复核链接", "body": "<p>本次共检索 <strong>104 条<\/strong>结果，经规则引擎自动分级：<\/p>\n<div class=\"tw\"><table>\n<thead>\n<tr>\n<th>等级<\/th>\n<th>数量<\/th>\n<th>含义<\/th>\n<\/tr>\n<\/thead>\n<tbody>\n<tr>\n<td>A 权威<\/td>\n<td>24 条<\/td>\n<td>境内权威媒体、百科、本地宝、高德、12306<\/td>\n<\/tr>\n<tr>\n<td>C 待核<\/td>\n<td>76 条<\/td>\n<td>境外OTA站点或内容可能过时，需交叉验证<\/td>\n<\/tr>\n<tr>\n<td>D 噪声<\/td>\n<td>4 条<\/td>\n<td>地域无关内容，已排除<\/td>\n<\/tr>\n<\/tbody>\n<\/table><\/div>\n<details><summary>展开：被排除的 4 条地域噪声<\/summary>\n\n<ul>\n<li>~~活動及節慶| 香港旅遊發展局~~ —— 地域噪声：非目标城市活动<\/li>\n<li>~~節慶、文化、觀光、體育等活動彙整表~~ —— 地域噪声：非目标城市活动<\/li>\n<li>~~節日盛事~~ —— 地域噪声：非目标城市活动<\/li>\n<li>~~國立臺灣文學館官網~~ —— 地域噪声：非目标城市活动<\/li>\n<\/ul><\/details><\/p>\n<details><summary><b>展开：A 级信源清单（24 条，可点击复核）<\/b><\/summary>\n\n<ul>\n<li><a href=\"https://kyfw.12306.cn/otn/leftTicket/init?linktypeid=dc&amp;fs=%E8%9A%8C%E5%9F%A0,BBH&amp;ts=%E7%BB%8D%E5%85%B4,SOH&amp;date=2025-12-22&amp;flag=N,N,Y\">中国铁路官方微博<\/a><\/li>\n<li><a href=\"https://www.12306.cn/index/view/ticket/railway.html\">北京市郊快速铁路情况介绍<\/a><\/li>\n<li><a href=\"https://www.mct.gov.cn/wlbphone/wlbydd/xxfb/zsdw/\">直属单位<\/a><\/li>\n<li><a href=\"http://zj.news.cn/20260718/5d90109d8d024ba5bc0752bda046f184/c.html\">嗨一夏2026年绍兴市暑期文旅促消费活动启动<\/a><\/li>\n<li><a href=\"https://zhuanlan.zhihu.com/p/639387746\">第三站，古城绍兴自由行攻略<\/a><\/li>\n<li><a href=\"https://zhuanlan.zhihu.com/p/618030470\">绍兴美食攻略<\/a><\/li>\n<li><a href=\"https://www.amap.com/ranking/shaoxing/food/330602\">绍兴市2025高德状元榜·美食- 必吃美食<\/a><\/li>\n<li><a href=\"https://zhuanlan.zhihu.com/p/394790359\">古城绍兴1-2日游（景点、美食、攻略都帮你做好啦<\/a><\/li>\n<li><a href=\"https://sx.bendibao.com/tour/jingdianbao/\">2026绍兴景点优惠门票_绍兴景点预约_绍兴景点推荐<\/a><\/li>\n<li><a href=\"https://www.zhihu.com/question/318980252/answer/2768023800\">求一个绍兴游玩攻略？ - 嬉游君的回答<\/a><\/li>\n<li><a href=\"https://www.sina.cn/news/detail/5289197730010559.html\">绍兴古城五一漫游攻略<\/a><\/li>\n<li><a href=\"https://view.inews.qq.com/a/20251216A07BGP00\">【文末福利】“压马路”精华版！这些Citywalk路线人少还出片！ ...<\/a><\/li>\n<li><a href=\"https://m.sx.bendibao.com/youhui/jingdianmenpiao/status2/\">绍兴景点门票优惠券领取<\/a><\/li>\n<li><a href=\"https://news.qq.com/rain/a/20260424A08NEG00\">绍兴这些景区有优惠！还有文博场馆五一开放安排！ - 腾讯新闻<\/a><\/li>\n<li><a href=\"https://sx.bendibao.com/jingdian/zhoubian/price/24\">绍兴周边景点门票大全<\/a><\/li>\n<li><a href=\"http://www.zj.xinhuanet.com/20260210/54db2249f5034d49a7ad4e88482ca3da/c.html\">美育润古城——绍兴美术馆开馆<\/a><\/li>\n<li><a href=\"https://www.sohu.com/a/773953970_121106832\">收藏！绍兴北站最新攻略<\/a><\/li>\n<li><a href=\"https://sx.bendibao.com/jingdian/l-5a/\">绍兴5A景点<\/a><\/li>\n<li><a href=\"https://zhuanlan.zhihu.com/p/623435162\">绍兴五一十大热门旅游景点<\/a><\/li>\n<li><a href=\"https://sx.bendibao.com/jingdian/price/2\">绍兴景点门票大全<\/a><\/li>\n<li><a href=\"https://sx.bendibao.com/jingdian/z-guzhen/\">绍兴周边古镇景点<\/a><\/li>\n<\/ul><\/details><\/p>\n<hr />\n<p><em>报告由 trip-plan-skill 生成 · 规则引擎驱动 · 数据来源 anysearch 实时检索<\/em>\n<em>生成时间：2026-09-17<\/em><\/p>"}];
+const nav = document.getElementById("nav");
+const main = document.getElementById("main");
+
+// 通过 innerHTML 注入的脚本节点不会执行；这里用 DOMParser 解析后
+// 手动重建 script 节点，使其按插入顺序执行（地图 SDK 初始化依赖此机制）。
+function injectHTML(target, html) {
+  const doc = new DOMParser().parseFromString(
+    '<div id="__root__">' + html + '</div>', 'text/html');
+  const root = doc.getElementById('__root__');
+  const scripts = [];
+  // 先取出 script（保留文档顺序），再从 DOM 中移除
+  root.querySelectorAll('script').forEach(s => {
+    scripts.push(s);
+    s.remove();
+  });
+  while (root.firstChild) target.appendChild(root.firstChild);
+  scripts.forEach(old => {
+    const s = document.createElement('script');
+    for (const a of old.attributes) s.setAttribute(a.name, a.value);
+    s.textContent = old.textContent;
+    // src 型脚本：等待加载完成再放下一个，保证顺序（代理配置必须先于 SDK）
+    if (s.src) {
+      s.async = false;
+      target.appendChild(s);
+    } else {
+      target.appendChild(s);
+    }
+  });
+}
+
+// 地图 SDK 就绪后触发重算视野（地图模块可能是异步加载的）
+window.__waitMap__ = function (cb) {
+  let n = 0;
+  (function poll() {
+    if (typeof TMap !== 'undefined' && typeof window.__rebuildMap__ === 'function') return cb();
+    if (++n > 100) return;              // 约 10s 后放弃
+    setTimeout(poll, 100);
+  })();
+};
+
+MODULES.forEach((m, i) => {
+  const b = document.createElement("button");
+  b.innerHTML = '<span class="ic">' + m.icon + '</span>' + m.name;
+  b.dataset.i = i;
+  b.className = i === 0 ? "on" : "";
+  b.addEventListener("click", () => show(i));
+  nav.appendChild(b);
+
+  const d = document.createElement("section");
+  d.className = "mod" + (i === 0 ? " on" : "");
+  const head = document.createElement("div");
+  head.className = "modhead";
+  head.innerHTML = '<h2>' + m.name + '</h2>' +
+    (m.desc ? '<span class="desc">' + m.desc + '</span>' : '');
+  const card = document.createElement("div");
+  card.className = "card";
+  d.appendChild(head);
+  d.appendChild(card);
+  injectHTML(card, m.body);
+  main.appendChild(d);
+});
+
+// 窄屏目录折叠：点「☰ 目录」条展开/收起；当前模块名显示在条上
+const navtoggle = document.getElementById("navtoggle");
+if (navtoggle) {
+  navtoggle.addEventListener("click", () => {
+    document.getElementById("navwrap").classList.toggle("open");
+  });
+}
+const navcur = document.getElementById("navcur");
+if (navcur && MODULES[0]) navcur.textContent = MODULES[0].name;
+
+function show(i) {
+  document.querySelectorAll(".nav-in button").forEach((b, j) =>
+    b.classList.toggle("on", i === j));
+  document.querySelectorAll(".mod").forEach((m, j) =>
+    m.classList.toggle("on", i === j));
+  const wrap = document.getElementById("navwrap");
+  if (wrap) wrap.classList.remove("open");
+  const cur = document.getElementById("navcur");
+  if (cur && MODULES[i]) cur.textContent = MODULES[i].name;
+  window.scrollTo({ top: 0, behavior: "smooth" });
+  // 地图模块初始 display:none，容器尺寸为 0，显示后需重算视野
+  if (typeof window.__rebuildMap__ === "function") {
+    setTimeout(window.__rebuildMap__, 80);
+  }
+}
+
+// 首屏若默认模块含地图，延迟重算一次视野
+window.addEventListener("load", function () {
+  if (typeof window.__rebuildMap__ === "function") {
+    setTimeout(window.__rebuildMap__, 200);
+  }
+});
+</script>
+</body>
+</html>
